@@ -8,5 +8,7 @@ public class Main {
 
         System.out.println("Hello I'm Furkan Veli");
 
+        System.out.println("Merhabalar Ben Furkan Veli");
+
 
     }}
