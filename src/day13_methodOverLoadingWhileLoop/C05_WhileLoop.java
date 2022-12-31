@@ -10,8 +10,7 @@ public class C05_WhileLoop {
         // bu sayı yeter deyip toplamı yazdırın.
 
         Scanner scan = new Scanner(System.in);
-        System.out.println("Lütfen toplamak istediğiniz sayıları giriniz.");
-        int toplanacakSayilar = scan.nextInt();
+
 
         int toplam = 0;
         int sayi = 0;

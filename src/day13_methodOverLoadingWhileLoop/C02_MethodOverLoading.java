@@ -39,6 +39,9 @@ public class C02_MethodOverLoading {
 
     }
 
+
+
+
     public static void toplama(int sayi1,int sayi2){
         System.out.println("2 tam sayının toplamı "+(sayi1+sayi2));
 

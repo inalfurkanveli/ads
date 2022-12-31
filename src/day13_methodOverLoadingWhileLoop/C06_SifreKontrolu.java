@@ -41,6 +41,7 @@ public class C06_SifreKontrolu {
     }
 
     public static boolean sifreKontrolEt(String sifre) {
+
         int flag = 0;
         // - ilk harf kucuk harf olmali
         if (!(sifre.charAt(0) >= 'a' && sifre.charAt(0) <= 'z')) {
