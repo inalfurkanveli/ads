@@ -22,6 +22,8 @@ public class C31_ManavListeSorusu {
    static ArrayList<String> urunler=new ArrayList<>(Arrays.asList("Portokal","Nar","Mandalina","Domates","Mantar"));
    static   ArrayList<Integer> fiyatlar= new ArrayList<>(Arrays.asList(20,30,15,20,30));
 
+   static  ArrayList<String> alınanUrunler= new ArrayList<>();
+
    static   int toplam=0;
 
 
@@ -39,8 +41,29 @@ public class C31_ManavListeSorusu {
         int secilenÜrün=scanner.nextInt();
         System.out.println("Lütfen almak istediginiz miktarı giriniz.");
         int miktar=scanner.nextInt();
+        switch (secilenÜrün) {
+            case 1:
+                alınanUrunler.add(miktar + " kilo portokal =\t"+ miktar*fiyatlar.get(secilenÜrün-1)+" TL");
+                break;
+            case 2:
+                alınanUrunler.add(miktar +" kilo Nar =\t" + miktar*fiyatlar.get(secilenÜrün-1)+" TL");
+                break;
+            case 3:
+                alınanUrunler.add(miktar +" kilo Mandalina=\t" + miktar*fiyatlar.get(secilenÜrün-1)+" TL");
+                break;
+                case 4:
+                    alınanUrunler.add(miktar + " kilo Domates=\t" + miktar*fiyatlar.get(secilenÜrün-1)+" TL");
+                    break;
+            case 5:
+                alınanUrunler.add(miktar + " kilo Mantar=\t"+ miktar*fiyatlar.get(secilenÜrün-1)+" TL ");
+                break;
+
+        }
+
 
         toplam += miktar*fiyatlar.get(secilenÜrün-1);
+
+
 
         System.out.println("Alışverişe devam etmek istiyor musunuz ? E/H");
         char secim= scanner.next().charAt(0);
@@ -48,7 +71,14 @@ public class C31_ManavListeSorusu {
         if(secim == 'E' || secim == 'e'){
             fiyatListesi();
         } else {
-            System.out.println("Alışverişin toplam tutarı : "+ toplam + "TL");
+
+            System.out.println("FURKAN && EMRE MARKET ALIŞVERİŞ FİŞİ");
+            for (int i = 0; i <alınanUrunler.size() ; i++) {
+                System.out.println(alınanUrunler.get(i));
+            }
+
+            System.out.println("Alışverişin toplam tutarı : "+ toplam + "TL\n");
+            System.out.println("FURKAN && EMRE MARKET'İ TERCİH ETTİĞİNİZ İÇİN TEŞEKKÜR EDERİZ");
         }
 
     }
