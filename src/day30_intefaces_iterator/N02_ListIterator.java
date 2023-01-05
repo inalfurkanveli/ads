@@ -28,6 +28,14 @@ public class N02_ListIterator {
         }
         System.out.println(sayilar);
 
+        // Listedeki tüm elementleri iterator kullanarak sondan basa dogru yazdırın.
+
+        // bir üstteki loop ile sona gittigimiz için iterator sonda. Yani olmasını istedigimiz yerde.
+
+        while(lit.hasPrevious()){
+            System.out.print(lit.previous()+ " "); // 14 12 5 26 8
+        }
+
 
     }
 }
