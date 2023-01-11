@@ -135,4 +135,80 @@ public class MapMethodDepo {
 
 
     }
+
+    public static void bolumListesiOlusturma(Map<Integer, String> ogrenciMap, String bölüm ) {
+        // verilen bölümdeki ogrencilerin
+        // no isim soyisim ve siniflarıni yazdırın
+        // bir method olusturun
+
+         Set<Map.Entry<Integer, String>> entrySeti = ogrenciMap.entrySet();
+
+
+
+        for (Map.Entry<Integer,String> eachValue:entrySeti
+             ) {
+            String valueEntry=eachValue.getValue();
+
+            String[] entryValueArr= valueEntry.split("-"); // [Ali, Can, 11, H, MF]
+            if (entryValueArr[4].equalsIgnoreCase(bölüm)){
+                System.out.println(eachValue.getKey() + " "+
+                                    entryValueArr[0]+ " " +
+                                    entryValueArr[1]+ " "+
+                                    entryValueArr[2]);
+            }
+
+
+        }
+
+    }
+
+    public static   Map<Integer, String> soyisimleriBuyukHarfYap(Map<Integer, String> ogrenciMap) {
+
+        //  Map’deki soyisimleri buyuk harfe cevirin
+        // 1- EntrySet olusturalım
+
+        Set<Map.Entry<Integer, String>> entrySeti = ogrenciMap.entrySet();
+        // 2- For-each lopp ile her bir entry'i elden geçirip , soyisimleri büyük harf yapalım
+
+        for (Map.Entry<Integer,String> eachEntry:entrySeti
+             ) {
+            // 3- entry'den value alalım
+
+            String entryValue= eachEntry.getValue();
+            // 4- soyisim bilgisine ulaşıp değiştirmek için parçala
+            String [ ] entryValueArr=entryValue.split("-"); // [Ali, Can, 11, H, MF
+
+            entryValueArr[1]=entryValueArr[1].toUpperCase(); // [Ali, CAN, 11, H, MF]
+
+            // 6- değişikliği yaptıktan sonra yeniden birleştirmeleri yapıp
+            // map'i update yapmalıyız
+            //7- setValue() kullanarak value'yu  yeni haline  update edelim
+
+            eachEntry.setValue(entryValueArr[0]+"-"+
+                                entryValueArr[1]+"-"+
+                                entryValueArr[2]+"-"+
+                                entryValueArr[3]+"-"+
+                                entryValueArr[4]);
+
+
+        }
+
+
+
+
+
+        return ogrenciMap;
+    }
+
+    public static void tumListeyiYazdır(Map<Integer, String> ogrenciMap) {
+
+        Set<Map.Entry<Integer,String>> ogrenciEntrySet= ogrenciMap.entrySet();
+        System.out.println(" No        Ogrenci Bilgileri");
+        System.out.println("==============================");
+
+        for (Map.Entry<Integer,String> eachEntry:ogrenciEntrySet
+        ) {
+            System.out.println(eachEntry);
+        }
+    }
 }
