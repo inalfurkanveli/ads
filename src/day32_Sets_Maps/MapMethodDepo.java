@@ -211,4 +211,45 @@ public class MapMethodDepo {
             System.out.println(eachEntry);
         }
     }
+
+    public static Map<Integer, String> siniflariArtir(Map<Integer, String> ogrenciMap) {
+        // map'de istedigimiz degisikligi yaptiktan sonra
+        // map'i update yapmanın en kolay yolu setEntry()
+        // ogrenci map'indeki tum sınıf degerlerini 1 artirin
+        // 12.sınıf varsa sınıf bilgisini mezun yap
+
+        Set<Map.Entry<Integer, String>> entrySeti = ogrenciMap.entrySet();
+
+        for (Map.Entry<Integer,String> eachEntryi: entrySeti // 101=Ali-Can-11-H-MF"
+             ) {
+            String entryValue= eachEntryi.getValue();  // Ali-Can-11-H-MF
+
+            String [] enrtyArr=entryValue.split("-");  // [Ali, CAN, 11, H, MF]
+
+
+            int sinifInt=Integer.parseInt(enrtyArr[2]);
+            if (sinifInt==12){
+                enrtyArr[2]="Mezun oldu.";
+            }else {
+                enrtyArr[2]=sinifInt+1+"";
+            }
+
+            // sinif bilgisini guncelledik
+            // bu guncellemeyi map'e islememiz lazim
+            eachEntryi.setValue(enrtyArr[0]+"-"+
+                    enrtyArr[1]+"-"+
+                    enrtyArr[2]+"-"+
+                    enrtyArr[3]+"-"+
+                    enrtyArr[4]);
+
+
+
+
+
+        }
+
+
+
+        return  ogrenciMap;
+    }
 }
