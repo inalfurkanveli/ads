@@ -1,9 +1,6 @@
 package day32_Sets_Maps;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class MapMethodDepo {
 
@@ -15,9 +12,9 @@ public class MapMethodDepo {
         ogrenciMap.put(101, "Ali-Can-11-H-MF");
         ogrenciMap.put(102, "Furkan-Veli-12-B-EA");
         ogrenciMap.put(103, "Mustafa-Kemal-11-C-MF");
-        ogrenciMap.put(104, "Ayse-Can-11-H-MF");
+        ogrenciMap.put(104, "Ayse-Can-10-H-MF");
         ogrenciMap.put(105, "Sevgi-Cem-11-T-TM");
-        ogrenciMap.put(106, "Sevgi-Can-11-K-MF");
+        ogrenciMap.put(106, "Sevgi-Can-10-K-MF");
 
         return ogrenciMap;
     }
@@ -105,6 +102,36 @@ public class MapMethodDepo {
         ogrenciMapNumara.put(numara, yeniValue);
 
         return ogrenciMapNumara;
+
+
+    }
+
+    public static void sinifListesiYazdirma(Map<Integer, String> ogrenciMap, String sinif) {
+
+        // verilen siniftaki ogrencilerin no,isim,soyisim,bolumlerini
+        // bir liste olarak yazdiran bir method olusturun
+
+        System.out.println("No   İsim   Soyisim  Bolumler");
+        System.out.println("==============================");
+
+         Set<Map.Entry<Integer, String>> entrySeti= ogrenciMap.entrySet();
+        for (Map.Entry<Integer,String> eachEntry:entrySeti
+             ) { // 101=Ali-Can-11-H-MF
+            // 1- entry'den value'yu alalım
+
+           String entryValue =eachEntry.getValue();
+           // 2- Bu value'yu parcalayıp bir array'e store edelim
+           String[] valueArr=entryValue.split("-"); // [Ali, Can, 11, H, MF]
+            //3- Sınıf bilgisini kontrol edip istenen sınıf ile aynı ise istenen bilgileri yazdıralım
+           if (valueArr[2].equalsIgnoreCase(sinif)){
+               System.out.println(eachEntry.getKey() + " "+
+                                    valueArr[0]+ " " +
+                                    valueArr[1]+ " "+
+                                    valueArr[4]+ " ");
+           }
+        }
+
+
 
 
     }
