@@ -252,4 +252,73 @@ public class MapMethodDepo {
 
         return  ogrenciMap;
     }
+
+    public static void sinifSiraliListeOlustur(Map<Integer, String> ogrenciMap) {
+      //  101=Ali-Can-11-H-MF"
+      // 11 H Ali Can 101
+
+
+        Set<Map.Entry<Integer, String>> entrySet = ogrenciMap.entrySet();
+        Set<String> siraliOgrenciSeti= new TreeSet<>();
+
+        for (Map.Entry<Integer,String> eachEntry:entrySet
+             ) {
+            String entryValue= eachEntry.getValue();
+            String [] entryArr=entryValue.split("-"); // [Ali, CAN, 11, H, MF]
+            // Entry'den istenen bilgileri alıp yeni bir String olusturucagız
+            // bu stringleri yazdıracagız
+            // 11 H Ali Can 101
+            //
+
+            String istenenFormattakiBilgi = entryArr[2]+ " "+
+                                            entryArr[3]+ " "+
+                                            entryArr[0]+ " "+
+                                            entryArr[1]+ " "+
+                                            eachEntry.getKey();
+            siraliOgrenciSeti.add(istenenFormattakiBilgi);
+            System.out.println("sinif sube isim soyisim no ");
+            System.out.println("===========================");
+
+        }
+        for (String each:siraliOgrenciSeti
+        ) {
+
+            System.out.println(each);
+        }
+
+
+    }
+
+    public static void isimSoyisimSiraliListeYazdir(Map<Integer, String> ogrenciMap) {
+        // tum ogrenci Listesini isim soyisim no sinif sube bolum
+        // seklinde sirali olarak yazdiran method olusturun
+
+        Set<Map.Entry<Integer, String>> entrySeti = ogrenciMap.entrySet();
+        Set<String> isimSoyisimSiraliSet=new TreeSet<>();
+        for (Map.Entry<Integer,String> eachEntry:entrySeti
+             ) {
+            String value=eachEntry.getValue();
+            String [] valueArr=value.split("-");
+
+            String istenenFormattakiBilgi=  valueArr[0]+ " "+
+                                            valueArr[1]+ " "+
+                                            eachEntry.getKey()+" "+
+                                            valueArr[2]+ " "+
+                                            valueArr[3]+ " "+
+                                            valueArr[4];
+
+            isimSoyisimSiraliSet.add(istenenFormattakiBilgi);
+
+
+        }
+        // sirali seti yazdiralım
+        System.out.println("sinif sube isim soyisim no ");
+        System.out.println("===========================");
+        for (String each:isimSoyisimSiraliSet
+             ) {
+            System.out.println(each);
+        }
+
+
+    }
 }
