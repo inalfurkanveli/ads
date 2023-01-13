@@ -11,7 +11,7 @@ input : int[][] arr = {{3,4,5}, {2,3,6,7}};
 output: [5, 7, 11
          */
 
-        int[][] arr = {{3,4,5}, {2,3,6,7}, {5,3,}};
+        int[][] arr = {{3,4,5}, {2,3,6,7}, {5,3}};
 
 
         // dinamik hale getirebilmek için önce inner array'lerden en kısa olanı bulmamız gerekir.
