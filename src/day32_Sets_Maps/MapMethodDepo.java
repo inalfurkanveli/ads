@@ -256,8 +256,6 @@ public class MapMethodDepo {
     public static void sinifSiraliListeOlustur(Map<Integer, String> ogrenciMap) {
       //  101=Ali-Can-11-H-MF"
       // 11 H Ali Can 101
-
-
         Set<Map.Entry<Integer, String>> entrySet = ogrenciMap.entrySet();
         Set<String> siraliOgrenciSeti= new TreeSet<>();
 
@@ -283,7 +281,11 @@ public class MapMethodDepo {
         for (String each:siraliOgrenciSeti
         ) {
 
-            System.out.println(each);
+            System.out.println(each); // [Ali, CAN, 11, H, MF]
+
+
+
+
         }
 
 
@@ -312,11 +314,19 @@ public class MapMethodDepo {
 
         }
         // sirali seti yazdiralım
-        System.out.println("sinif sube isim soyisim no ");
-        System.out.println("===========================");
+        System.out.println("isim     soyisim no  sinif sube bolum");
+        System.out.println("=====================================");
         for (String each:isimSoyisimSiraliSet
              ) {
-            System.out.println(each);
+          //  System.out.println(each);  // Ali       Can   101   11     H     MF
+            String[] duzenliYazdirArr=each.split(" "); //
+            String isim=duzenliYazdirArr[0];
+            String soyisim=duzenliYazdirArr[1];
+            String no=duzenliYazdirArr[2];
+            String sinif=duzenliYazdirArr[3];
+            String sube=duzenliYazdirArr[4];
+            String bolum=duzenliYazdirArr[5];
+            System.out.printf("%-7s %-6s %3s  %2s     %3s %7s%n",isim,soyisim,no,sinif,sube,bolum);
         }
 
 
